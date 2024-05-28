@@ -7,6 +7,10 @@ from flask import Flask, request, jsonify
 from werkzeug.utils import secure_filename
 import os
 import time
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
 
 # Seed random generators:
 np.random.seed(42)
@@ -92,4 +96,4 @@ def remove_bg():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000)
