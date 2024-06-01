@@ -63,9 +63,6 @@ def create_masked_image(image, probability):
     return masked_image
 
 
-app = Flask(__name__)
-
-
 @app.route("/remove_bg", methods=["POST"])
 def remove_bg():
     file = request.files["image"]
